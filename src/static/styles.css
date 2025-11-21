@@ -28,26 +28,26 @@ header h1 {
   margin-bottom: 10px;
 }
 
+
 main {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+  min-height: 200px;
 }
 
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
-section {
+#activities-container {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
+  margin: 40px auto 0 auto;
+}
+
+@media (max-width: 700px) {
+  #activities-container {
+    max-width: 98vw;
+    padding: 10px;
+  }
 }
 
 section h3 {
@@ -65,7 +65,8 @@ section h3 {
   background-color: #f9f9f9;
 }
 
-.activity-card h4 {
+/* Activity Card Styles */
+.activity-card {
   margin-bottom: 10px;
   color: #0066cc;
 }
@@ -74,7 +75,94 @@ section h3 {
   margin-bottom: 8px;
 }
 
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 /* New styles for participants section */
+.register-btn {
+  background: #43a047;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  align-self: flex-end;
+  transition: background 0.2s;
+}
+.register-btn:hover {
+  background: #388e3c;
+}
+
+/* Modal Styles */
+#register-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+#register-modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: #fff;
+  padding: 32px 24px 24px 24px;
+  border-radius: 8px;
+  min-width: 300px;
+  max-width: 90vw;
+  box-shadow: 0 4px 24px rgba(26,35,126,0.18);
+  position: relative;
+}
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+}
+.modal-content h3 {
+  margin-bottom: 18px;
+  color: #1a237e;
+}
+.modal-content .form-group {
+  margin-bottom: 16px;
+}
+.modal-content input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+.modal-content button[type="submit"] {
+  background: #1a237e;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.modal-content button[type="submit"]:hover {
+  background: #3949ab;
+}
+.modal-content .error {
+  color: #c62828;
+  margin-top: 10px;
+}
+.modal-content .success {
+  color: #388e3c;
+  margin-top: 10px;
+}
 .participants-container {
   margin-top: 15px;
   padding-top: 12px;
